@@ -1,0 +1,42 @@
+<div class="py-10 md:px-20" *ngIf="loading; else content">
+    <ngx-skeleton-loader [count]="4" appearance="line" class="space-x-3 flex" [theme]="{
+        'background-color': '#ddd',
+        height: '15rem',
+        'border-radius': 0
+    }"></ngx-skeleton-loader>
+</div>
+
+<ng-template #content>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-10 md:px-20">
+        @for (user of users; track $index) {
+        <a [routerLink]="['users/',user.id]">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="relative">
+                    <img class="w-full object-cover h-48" [src]="user.avatar">
+                </div>
+                <div class="p-4">
+                    <div class="text-xl font-semibold text-gray-800">{{ user.first_name }} {{ user.last_name }}</div>
+                    <div class="text-xs  text-gray-800 mb-2 underline hover:cursor-pointer"> {{ user.email }} </div>
+                </div>
+            </div>
+        </a>
+        }
+    </div>
+</ng-template>
+
+
+
+@if(users?.length == 0){
+<div class=" flex flex-col items-center justify-center py-8 px-4 text-center bg-gray-100 rounded-lg shadow-md w-full">
+    <svg width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <h3 class="text-xl font-medium mt-4 text-gray-700 ">User not found</h3>
+
+</div>
+}
+<app-paginator [paginatorData]="paginatorData"></app-paginator>

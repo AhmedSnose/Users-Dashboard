@@ -1,0 +1,13 @@
+<form [formGroup]="searchForm"
+    class=" bg-color-one py-52 px-1 md:px-8 text-center relative text-white font-bold text-2xl md:text-3xl overflow-auto">
+    <h1 class="pb-4">Search for user</h1>
+    <div class="w-11/12 md:w-3/4 lg:max-w-3xl m-auto">
+        <div class="relative z-30 text-base text-black">
+            <input type="number" class="transition ease-in-out delay-150 hover:-translate-y-1 rounded-lg hover:shadow-lg hover:scale-110 duration-300  mt-2 focus:outline-none  py-3 px-6 block w-full" placeholder="Search By User Id"
+                formControlName="userId" />
+            <div
+                class="text-left absolute top-10 rounded-t-none rounded-b-2xl shadow bg-white divide-y w-full max-h-40 overflow-auto">
+            </div>
+        </div>
+    </div>
+</form>

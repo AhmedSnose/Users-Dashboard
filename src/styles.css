@@ -1,0 +1,39 @@
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+/* Tailwind directives  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87); */
+  background-color: #F5EDED;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.bg-color-one {
+  background: #7FA1C3;
+}
+
+.bg-color-two {
+  background: #E2DAD6;
+}
+
+.bg-color-three {
+  background: #F5EDED;
+}
+
+.bg-color-four {
+  background: #6482AD;
+}
